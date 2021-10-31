@@ -8,23 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.tfsg.surfeit.R
 
-class MainFragment : Fragment() {
+class ConfirmScanFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = ConfirmScanFragment()
     }
-
-    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+        return inflater.inflate(R.layout.confirm_fragment, container, false)
     }
 
 }
