@@ -7,14 +7,259 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ListFragment">
 
-    <TextView
-        android:id="@+id/message"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton16"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="88dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton15"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="283dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton14"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton17"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton18"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="88dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="488dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton19"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="88dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="521dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton20"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="88dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="604dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton22"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton13"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="88dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton6"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="605dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton8"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="489dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton5"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton11"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton10"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="132dp"
+        android:layout_height="52dp"
+        android:text="Dairy "
+        android:textAlignment="center"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="41dp" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/color_bar"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fresh "
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Soon "
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="176dp"
+        android:layout_height="355dp"
+        android:rotationX="0"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:splitMotionEvents="true"
+        android:textAlignment="textStart"
+        android:textDirection="firstStrongRtl"
+        android:visibility="visible"
+        app:stackFromEnd="false"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="283dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton9"
+        android:layout_width="32dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="521dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton12"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="14dp"
+        android:layout_height="387dp"
+        android:text="1235571321"
+        android:textAlignment="gravity"
+        android:textAllCaps="true"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="250dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
