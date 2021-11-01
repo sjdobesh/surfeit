@@ -4,17 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tfsg.surfeit.databinding.MainActivityBinding
 import com.tfsg.surfeit.ui.main.CameraFragment
-import com.tfsg.surfeit.ui.main.ConfirmScanFragment
+// import com.tfsg.surfeit.ui.main.ConfirmScanFragment
 import com.tfsg.surfeit.ui.main.HomeFragment
 import com.tfsg.surfeit.ui.main.ListFragment
-import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: MainActivityBinding;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        binding = MainActivityBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         // initialize our fragments
         val home = HomeFragment()
@@ -22,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         val cam  = CameraFragment()
         // val scan = ConfirmScanFragment()
 
-        setFrag(home);
+        setFrag(home)
 
         // bottom nav controls
-        bottom_nav.setOnNavigationItemSelectedListener {
+        binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.fridge -> {
                     setFrag(list)
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     // set a fragment to be displayed
     private fun setFrag(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper, fragment);
-            commit();
+            replace(R.id.fl_wrapper, fragment)
+            commit()
         }
 }
