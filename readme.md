@@ -17,17 +17,17 @@ CSCI 536: Tech for Social Good.
 - [X] Set up git
   - [X] Set up .gitignore 
   - [X] Set up branch protection
-  - [ ] Add team members
+  - [X] Add team members
     - [X] Add Olivia
     - [X] Add Sam
-    - [ ] Add Noah
+    - [X] Add Noah
     - [X] Add Luther
   - [X] Push starting template
   - [X] Determine features scope
   - [X] Set milestones & division of labor
   - [X] Fragments set up
   - [X] Fragment transitions / page navigation
-  - [ ] Basic UI components, can be static place holders for now
+  - [X] Basic UI components, can be static place holders for now
 
 #### Division of labor:
 - [ ] Olivia
@@ -35,8 +35,8 @@ CSCI 536: Tech for Social Good.
 - [X] Sam
   - [X] Git junk
   - [X] Paging and navigation controls
-- [ ] Noah
-  - [ ] Home page
+- [X] Noah
+  - [X] Home page
 - [ ] Luther
   - [ ] Camera page
 
