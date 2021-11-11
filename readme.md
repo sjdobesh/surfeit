@@ -12,16 +12,25 @@ expiration dates and using leftovers.
 ### Class
 CSCI 536: Tech for Social Good.
 
+## Quick Start
+1. Download android studio https://developer.android.com/studio
+2. Clone the project with `git clone https://github.com/sjdobesh/surfeit.git`
+3. Open the Project with android studio `file>open>`
+4. Add an emulator `tools>avd manager>`
+  - Click `+ add virtual device` and choose any, we are using pixel 3
+5. Build with green hammer
+6. Run with green arrow
+
 ## Milestones
-### 1. Nov 1st -- Template and navigation set up
-- [X] Set up git
-  - [X] Set up .gitignore 
-  - [X] Set up branch protection
-  - [ ] Add team members
-    - [X] Add Olivia
-    - [X] Add Sam
-    - [ ] Add Noah
-    - [X] Add Luther
+1. Nov 1st -- Template and navigation set up
+  - [X] Set up git
+    - [X] Set up .gitignore 
+    - [X] Set up branch protection
+    - [X] Add team members
+      - [X] Add Olivia
+      - [X] Add Sam
+      - [X] Add Noah
+      - [X] Add Luther
   - [X] Push starting template
   - [X] Determine features scope
   - [X] Set milestones & division of labor
@@ -35,22 +44,30 @@ CSCI 536: Tech for Social Good.
 - [X] Sam
   - [X] Git junk
   - [X] Paging and navigation controls
-- [ ] Noah
-  - [ ] Home page
-- [ ] Luther
-  - [ ] Camera page
+- [X] Noah
+  - [X] Home page
+- [X] Luther
+  - [X] Camera page
 
-### 2. Nov 12th -- Database set up
-- [ ] SQLite
-- [ ] Read and write entries
-- [ ] Display database entries in the app
-- [ ] Dynamic UI components (eg. Update display to database)
+2. Nov 12th -- Database set up
+  - [X] SQLite
+  - [X] Read and write entries
+  - [ ] Display database entries in the app
+  - [ ] Dynamic UI components
+    - [ ] Visual representation of database entries
+    - [ ] Camera interface
 
-#### Division of labor:
-- [ ] Olivia
-- [ ] Sam
-- [ ] Noah
-- [ ] Luther
+  ### Division of labor:
+  - [ ] Olivia
+  - [X] Sam
+    - [X] Git management
+    - [X] Set up database manager
+      - [X] Make Food class for db entries
+      - [X] Write
+      - [X] Read
+  - [ ] Noah
+  - [ ] Luther
+    - [ ] Camera interface
 
 ### 3. Nov 23rd -- Scanning
 - [ ] Camera scanning implemented
