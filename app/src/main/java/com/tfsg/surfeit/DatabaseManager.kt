@@ -1,11 +1,12 @@
 package com.tfsg.surfeit
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 // database manager to act as interface to an sqlite database
-// To access this in fragments use 'DatabaseManager db = new DatabaseManager(this)'
+// To access this in fragments use 'DatabaseManager db = DatabaseManager(this)'
 abstract class DatabaseManager(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
@@ -27,12 +28,28 @@ abstract class DatabaseManager(context: Context?) :
         val db = this.writableDatabase
         var sqlInsert = "insert into $TABLE_FRIDGE "
         sqlInsert += "values( null, '"
-        sqlInsert += new_entry.title + "', '"
-        sqlInsert += new_entry.purchase_date + "', '"
-        sqlInsert += new_entry.expiration_date + "', '"
-        sqlInsert += new_entry.count.toString() + "')"
+        sqlInsert += "${new_entry.title}', '"
+        sqlInsert += "${new_entry.purchaseDate}', '"
+        sqlInsert += "${new_entry.expirationDate}', '"
+        sqlInsert += "${new_entry.count}')"
         db.execSQL(sqlInsert)
         db.close()
+    }
+
+    @SuppressLint("Recycle")
+    fun selectAll(): ArrayList<Food>  {
+        val sqlQuery = "select * from $TABLE_FRIDGE"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery( sqlQuery, null )
+
+        val entries = ArrayList<Food>( )
+        while(cursor.moveToNext()) {
+            val currentItem = Food(cursor.getString( 1 ), cursor.getString( 2 ),cursor.getString( 3 ), cursor.getInt(4))
+            currentItem.id = cursor.getInt(0)
+            entries.add(currentItem)
+        }
+        db.close( )
+        return entries
     }
 
     companion object {

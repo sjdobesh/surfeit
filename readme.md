@@ -13,9 +13,14 @@ expiration dates and using leftovers.
 CSCI 536: Tech for Social Good.
 
 ## Quick Start
-```
-// any dependencies or terminal commands to start app
-```
+
+1. Download android studio https://developer.android.com/studio
+2. Clone the project with `git clone https://github.com/sjdobesh/surfeit.git`
+3. Open the Project with android studio `file>open>`
+4. Add an emulator `tools>avd manager>`
+  - Click `+ add virtual device` and choose any, we are using pixel 3
+5. Build with green hammer
+6. Run with green arrow
 
 ## Milestones
 1. Nov 1st -- Template and navigation set up
@@ -25,35 +30,40 @@ CSCI 536: Tech for Social Good.
     - [ ] Add team members
       - [X] Add Olivia
       - [X] Add Sam
-      - [ ] Add Noah
+      - [X] Add Noah
       - [X] Add Luther
   - [X] Push starting template
   - [X] Determine features scope
   - [X] Set milestones & division of labor
   - [X] Fragments set up
-  - [ ] Fragment transitions / page navigation
-  - [ ] Basic UI components, can be static place holders for now
+  - [X] Fragment transitions / page navigation
+  - [X] Basic UI components, can be static place holders for now
 
   ### Division of labor:
-  - [ ] Olivia
+  - [X] Olivia
     - [ ] Category page
-  - [ ] Sam
+  - [X] Sam
     - [X] Git junk
-    - [ ] Paging and navigation controls
-  - [ ] Noah
-    - [ ] Home page
-  - [ ] Luther
-    - [ ] Camera page
+    - [X] Paging and navigation controls
+  - [X] Noah
+    - [X] Home page
+  - [X] Luther
+    - [X] Camera page
 
 2. Nov 12th -- Database set up
-  - [ ] SQLite
-  - [ ] Read and write entries
+  - [X] SQLite
+  - [X] Read and write entries
   - [ ] Display database entries in the app
   - [ ] Dynamic UI components (eg. Update display to database)
 
   ### Division of labor:
   - [ ] Olivia
-  - [ ] Sam
+  - [X] Sam
+    - [X] Git management
+    - [X] Set up database manager
+      - [X] Make Food class for db entries
+      - [X] Write
+      - [X] Read
   - [ ] Noah
   - [ ] Luther
 

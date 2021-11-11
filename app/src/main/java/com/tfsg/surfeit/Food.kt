@@ -3,12 +3,12 @@ package com.tfsg.surfeit
 // class to represent a food entry
 class Food(
     var title: String,
-    var purchase_date: String,
-    var expiration_date: String,
+    var purchaseDate: String,
+    var expirationDate: String,
     var count: Int,
 ) {
     // id
-    var id: String? = null
+    var id: Int? = null
 
     // increment & decrement
     fun incCount() {
