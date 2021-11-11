@@ -1,5 +1,6 @@
 package com.tfsg.surfeit
 
+// class to represent a food entry
 class Food(
     var title: String,
     var purchase_date: String,

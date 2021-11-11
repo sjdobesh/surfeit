@@ -4,11 +4,14 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+// database manager to act as interface to an sqlite database
+// To access this in fragments use 'DatabaseManager db = new DatabaseManager(this)'
 abstract class DatabaseManager(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
+        // create the main table of entries
         var sqlTable = "create table $TABLE_FRIDGE ( "
-        sqlTable += "$ID integer primary key autoincrement, "
+        sqlTable += "$ID integer primary key autoincrement, " // set primary key
         sqlTable += "${TITLE}title, "
         sqlTable += "${PURCHASE_DATE}purchase date, "
         sqlTable += "${EXPIRATION_DATE}expiration date, "
@@ -16,7 +19,10 @@ abstract class DatabaseManager(context: Context?) :
         db.execSQL(sqlTable)
     }
 
+    // you just have to override this, we don't need to use it
     override fun onUpgrade(db: SQLiteDatabase, oldV: Int, newV: Int) {}
+
+    // insert a food class as an entry into the database
     fun insert(new_entry: Food) {
         val db = this.writableDatabase
         var sqlInsert = "insert into $TABLE_FRIDGE "
