@@ -68,6 +68,8 @@ CSCI 536: Tech for Social Good.
   - [ ] Noah
   - [X] Luther
     - [X] Camera interface
+        - [X] Scans barcode
+        - [X] Displays decoded barcode
 
 ### 3. Nov 23rd -- Scanning
 - [ ] Camera scanning implemented
