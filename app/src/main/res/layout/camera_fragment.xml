@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,18 +8,27 @@
     android:orientation="vertical"
     tools:context=".ui.main.CameraFragment">
 
-    <ImageView
+    <!--  Code referenced from https://www.youtube.com/watch?v=drH63NpSWyk  -->
+    <com.budiyev.android.codescanner.CodeScannerView
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="60dp"
-        android:src="@mipmap/ic_launcher" />
+        android:id="@+id/scanner_view"
+        app:autoFocusButtonColor="@android:color/white"
+        app:autoFocusButtonVisible="true"
+        app:flashButtonColor="@android:color/white"
+        app:flashButtonVisible="true"
+        app:maskColor="#6C000000"/>
 
-    <Button
-        android:id="@+id/btnTakePicture"
+    <!--  Code referenced from https://www.youtube.com/watch?v=drH63NpSWyk  -->
+    <TextView
+        android:id="@+id/tv_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:text="Take Picture" />
+        android:layout_below="@+id/scanner_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="SCAN ITEM"
+        android:textSize="25dp"
+        android:textColor="@android:color/black"/>
 
-</LinearLayout>
+</RelativeLayout>
