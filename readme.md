@@ -36,7 +36,7 @@ CSCI 536: Tech for Social Good.
   - [X] Set milestones & division of labor
   - [X] Fragments set up
   - [X] Fragment transitions / page navigation
-  - [ ] Basic UI components, can be static place holders for now
+  - [X] Basic UI components, can be static place holders for now
 
 #### Division of labor:
 - [ ] Olivia
@@ -55,7 +55,7 @@ CSCI 536: Tech for Social Good.
   - [ ] Display database entries in the app
   - [ ] Dynamic UI components
     - [ ] Visual representation of database entries
-    - [ ] Camera interface
+    - [X] Camera interface
 
   ### Division of labor:
   - [ ] Olivia
@@ -66,8 +66,8 @@ CSCI 536: Tech for Social Good.
       - [X] Write
       - [X] Read
   - [ ] Noah
-  - [ ] Luther
-    - [ ] Camera interface
+  - [X] Luther
+    - [X] Camera interface
 
 ### 3. Nov 23rd -- Scanning
 - [ ] Camera scanning implemented
