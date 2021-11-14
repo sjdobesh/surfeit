@@ -39,8 +39,8 @@ CSCI 536: Tech for Social Good.
   - [X] Basic UI components, can be static place holders for now
 
 #### Division of labor:
-- [ ] Olivia
-  - [ ] Category page
+- [X] Olivia
+  - [X] Category page
 - [X] Sam
   - [X] Git junk
   - [X] Paging and navigation controls
