@@ -42,18 +42,20 @@ class HomeFragment : Fragment() {
         updateMetrics(view)
         //finding button elements
         val cam = view.findViewById<Button>(R.id.cameraScanButton)
-        val list = view.findViewById<Button>(R.id.categoryAdd)
+//        val list = view.findViewById<Button>(R.id.categoryAdd)
         val c1 = view.findViewById<Button>(R.id.categoryButton1)
         val c2 = view.findViewById<Button>(R.id.categoryButton2)
         val c3 = view.findViewById<Button>(R.id.categoryButton3)
+        val c4 = view.findViewById<Button>(R.id.categoryButton4)
+        val c5 = view.findViewById<Button>(R.id.categoryButton5)
         val refresh = view.findViewById<Button>(R.id.refreshButton)
         //create callbacks for onclick
         cam?.setOnClickListener{
             setFrag(CameraFragment())
         }
-        list?.setOnClickListener{
-            setFrag(ListFragment())
-        }
+//        list?.setOnClickListener{
+//            setFrag(ListFragment())
+//        }
         c1?.setOnClickListener{
             setFrag(ListFragment()) //pass in category "Dairy"
         }
@@ -61,7 +63,13 @@ class HomeFragment : Fragment() {
             setFrag(ListFragment()) //pass in category "Produce"
         }
         c3?.setOnClickListener{
-            setFrag(ListFragment()) //pass in category "Leftovers"
+            setFrag(ListFragment()) //pass in category "Meats"
+        }
+        c4?.setOnClickListener{
+            setFrag(ListFragment()) //pass in category "Staples"
+        }
+        c5?.setOnClickListener{
+            setFrag(ListFragment()) //pass in category "Misc"
         }
         refresh?.setOnClickListener {
             updateMetrics(view)
