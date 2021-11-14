@@ -39,8 +39,8 @@ CSCI 536: Tech for Social Good.
   - [X] Basic UI components, can be static place holders for now
 
 #### Division of labor:
-- [ ] Olivia
-  - [ ] Category page
+- [X] Olivia
+  - [X] Category page
 - [X] Sam
   - [X] Git junk
   - [X] Paging and navigation controls
@@ -53,8 +53,8 @@ CSCI 536: Tech for Social Good.
   - [X] SQLite
   - [X] Read and write entries
   - [ ] Display database entries in the app
-  - [ ] Dynamic UI components
-    - [ ] Visual representation of database entries
+  - [X] Dynamic UI components
+    - [X] Visual representation of database entries
     - [X] Camera interface
 
   ### Division of labor:
@@ -65,7 +65,10 @@ CSCI 536: Tech for Social Good.
       - [X] Make Food class for db entries
       - [X] Write
       - [X] Read
-  - [ ] Noah
+  - [X] Noah
+    - [X] Home Page UI components
+      - [X] Allow for updating savings, etc.
+      - [X] Count days since last scan
   - [X] Luther
     - [X] Camera interface
         - [X] Scans barcode
