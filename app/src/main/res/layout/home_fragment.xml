@@ -4,16 +4,345 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.main.HomeFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/savingsLabel"
         android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:text="Money Saved:"
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/metricLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Food Waste Avoided:"
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savingsValue" />
+
+    <TextView
+        android:id="@+id/metricLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="Last Shopping Trip:"
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricValue1" />
+
+    <TextView
+        android:id="@+id/metricLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="Metric 3:"
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricValue2" />
+
+    <TextView
+        android:id="@+id/kitchenLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="My Kitchen"
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricValue3" />
+
+    <TextView
+        android:id="@+id/scanLabel"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:text="Add a new item..."
+        android:textAlignment="center"
+        android:textColor="#737373"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/cameraScanButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/metricValue1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="100 lbs"
+        android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricLabel1" />
+
+    <TextView
+        android:id="@+id/metricValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="3 days ago (10/1)"
+        android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricLabel2" />
+
+    <TextView
+        android:id="@+id/metricValue3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="metric 3 value"
+        android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricLabel3" />
+
+    <TextView
+        android:id="@+id/savingsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="$1234.56"
+        android:textAlignment="center"
+        android:textColor="#8BC34A"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savingsLabel" />
+
+    <Button
+        android:id="@+id/categoryButton1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Home"
+        android:paddingLeft="60dp"
+        android:text="Dairy"
+        android:textAlignment="viewStart"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/categoryButton2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:text="Produce"
+        android:textAlignment="viewStart"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton1" />
+
+    <Button
+        android:id="@+id/categoryButton3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:text="Meats"
+        android:textAlignment="viewStart"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton2" />
+
+    <Button
+        android:id="@+id/categoryButton4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:text="Staples"
+        android:textAlignment="viewStart"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton3" />
+
+
+    <Button
+        android:id="@+id/categoryButton5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:text="Miscellaneous"
+        android:textAlignment="viewStart"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton4" />
+
+
+    <ImageView
+        android:id="@+id/categoryLogo2"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/garlic"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryButton2"
+        app:layout_constraintStart_toStartOf="@+id/categoryButton2"
+        app:layout_constraintTop_toBottomOf="@+id/categoryButton1" />
+
+    <ImageView
+        android:id="@+id/categoryLogo3"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/hot_meal"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryButton3"
+        app:layout_constraintStart_toStartOf="@+id/categoryButton2"
+        app:layout_constraintTop_toTopOf="@+id/categoryButton3" />
+
+    <ImageView
+        android:id="@+id/categoryLogo1"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/cheese_wedge"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryButton1"
+        app:layout_constraintStart_toStartOf="@+id/categoryButton1"
+        app:layout_constraintTop_toTopOf="@+id/categoryButton1" />
+
+
+    <ImageView
+        android:id="@+id/kitchenLogo"
+        android:layout_width="44dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="-5dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/fridge"
+        app:layout_constraintBottom_toBottomOf="@+id/kitchenLabel"
+        app:layout_constraintEnd_toStartOf="@+id/kitchenLabel" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="412dp"
+        android:layout_height="240dp"
+        android:background="#EAEAEA"
+        android:orientation="vertical"
+        android:translationZ="-90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kitchenLabel">
+
+    </LinearLayout>
+
+    <!--    <Button-->
+    <!--        android:id="@+id/categoryAdd"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:backgroundTint="#BBBBBB"-->
+    <!--        android:text="+ Add Category"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/categoryButton3" />-->
+
+    <Button
+        android:id="@+id/cameraScanButton"
+        android:layout_width="178dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:paddingTop="30dp"
+        android:text="Scan"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/cameraScanLogoMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:clickable="false"
+        android:src="@android:drawable/ic_menu_camera"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraScanButton"
+        app:layout_constraintEnd_toEndOf="@+id/cameraScanButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cameraScanButton"
+        app:layout_constraintTop_toTopOf="@+id/cameraScanButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/homeLogoInactive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/house"
+        android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraScanButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="#444444" />
+
+    <ImageView
+        android:id="@+id/listLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:clickable="true"
+        android:paddingLeft="200dp"
+        android:src="@drawable/open_folder"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraScanButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="91dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="3dp"
+        android:text="Refresh"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
