@@ -231,6 +231,33 @@
         app:layout_constraintTop_toTopOf="@+id/categoryButton3" />
 
     <ImageView
+        android:id="@+id/categoryLogo4"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/staples_logo"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryButton4"
+        app:layout_constraintStart_toStartOf="@+id/categoryButton3"
+        app:layout_constraintTop_toTopOf="@+id/categoryButton4" />
+
+
+    <ImageView
+        android:id="@+id/categoryLogo5"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/mis_logo"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryButton5"
+        app:layout_constraintStart_toStartOf="@+id/categoryButton4"
+        app:layout_constraintTop_toTopOf="@+id/categoryButton5" />
+
+    <ImageView
         android:id="@+id/categoryLogo1"
         android:layout_width="55dp"
         android:layout_height="0dp"
@@ -254,6 +281,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/kitchenLabel"
         app:layout_constraintEnd_toStartOf="@+id/kitchenLabel" />
 
+    <!--    <Button-->
+    <!--        android:id="@+id/categoryAdd"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:backgroundTint="#BBBBBB"-->
+    <!--        android:text="+ Add Category"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/categoryButton3" />-->
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="412dp"
@@ -266,17 +303,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kitchenLabel">
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera" />
     </LinearLayout>
-
-    <!--    <Button-->
-    <!--        android:id="@+id/categoryAdd"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:backgroundTint="#BBBBBB"-->
-    <!--        android:text="+ Add Category"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/categoryButton3" />-->
 
     <Button
         android:id="@+id/cameraScanButton"

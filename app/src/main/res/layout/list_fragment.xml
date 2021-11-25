@@ -8,14 +8,22 @@
     tools:context=".ui.main.ListFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="332dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/fridge_name"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <ListView
       android:id="@+id/list_view"
@@ -23,5 +31,4 @@
       android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
    </ListView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
