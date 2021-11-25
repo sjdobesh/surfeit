@@ -12,6 +12,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
 import com.tfsg.surfeit.R
+import android.util.Log
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 private const val CAMERA_REQUEST_CODE = 101
 
@@ -36,6 +42,8 @@ class CameraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val scannerView = view.findViewById<CodeScannerView>(R.id.scanner_view)
         val activity = requireActivity()
+        var lastBarcode = ""
+        var scanCount = 0
 
         codeScanner = CodeScanner(activity, scannerView)
 
@@ -56,8 +64,46 @@ class CameraFragment : Fragment() {
                     val scannedItem = view.findViewById<TextView>(R.id.tv_textView)
 
                     scannedItem.text = it.text
+                    if(it.text != lastBarcode) {
+                        scanCount++
+                        val scanCounter = view.findViewById<TextView>(R.id.textView)
+                        scanCounter.text = "" + scanCount
+                        lastBarcode = it.text
+                        // TODO Save the decoded barcode with it.text
+                        val scannerView = view.findViewById<TextView>(R.id.tv_scannedName)
+                        val scannerDesc = view.findViewById<TextView>(R.id.tv_scannedDesc)
 
-                    // TODO Save the decoded barcode with it.text
+                        //tutorial from https://developer.android.com/training/volley/simple
+
+                        // Instantiate the RequestQueue.
+                        val queue = Volley.newRequestQueue(getActivity()?.getApplicationContext())
+                        val url = "https://api.upcitemdb.com/prod/trial/lookup?upc=" + it.text
+
+                        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+                            Response.Listener { response ->
+//                                scannerView.text = response.getString("code")
+                                val jsonArray = response.getJSONArray("items")
+                                if (jsonArray.length() > 0) {
+                                    val item = jsonArray.getJSONObject(0);
+                                    val title = item.getString("title")
+                                    val desc = item.getString("description")
+                                    var titleLength = 50;
+                                    if (title.length < titleLength) titleLength = title.length;
+                                    scannerView.text = "%s".format(title.substring(0, titleLength))
+                                    var descLength = 85;
+                                    if (desc.length < descLength) descLength = desc.length;
+                                    scannerDesc.text = "%s".format(desc.substring(0, descLength))
+                                }
+                            },
+                            Response.ErrorListener { error ->
+                                scannerView.text = "Invalid Scan"
+                                scannerDesc.text = ""
+                            }
+                        )
+                        // Add the request to the RequestQueue.
+                        queue.add(jsonObjectRequest)
+
+                    }
                 }
             }
         }
