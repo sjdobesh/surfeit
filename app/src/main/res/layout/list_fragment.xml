@@ -7,81 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ListFragment">
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="17dp"
-        android:text="@string/leftovers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/Staples"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="186dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="22dp"
-        android:text="@string/dairy"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="17dp"
-        android:text="@string/Produce"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/miscellaneous"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="378dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/meat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -99,31 +24,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="178dp"
-        android:text="@string/money_saved"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="178dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="175dp"
-        android:layout_marginBottom="43dp"
-        android:text="@string/money_save_val"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    <ListView
+      android:id="@+id/list_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+   </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>
