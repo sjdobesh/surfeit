@@ -126,7 +126,9 @@ class CameraFragment : Fragment() {
         }
     }
 
-    // set a fragment to be displayed
+    /**
+     * Set a fragment to be displayed.
+     */
     private fun setFrag(fragment: Fragment) =
         requireActivity().supportFragmentManager.beginTransaction().apply {
             replace(R.id.fl_wrapper, fragment)
