@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -35,6 +36,7 @@ class CameraFragment : Fragment() {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val scannerView = view.findViewById<CodeScannerView>(R.id.scanner_view)
+        val manualButton = view.findViewById<Button>(R.id.manual_button)
         val activity = requireActivity()
 
         codeScanner = CodeScanner(activity, scannerView)
@@ -64,6 +66,10 @@ class CameraFragment : Fragment() {
 
         scannerView.setOnClickListener {
             codeScanner.startPreview()
+        }
+
+        manualButton.setOnClickListener {
+            setFrag(ManualInputFragment())
         }
     }
 
@@ -119,4 +125,11 @@ class CameraFragment : Fragment() {
             }
         }
     }
+
+    // set a fragment to be displayed
+    private fun setFrag(fragment: Fragment) =
+        requireActivity().supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_wrapper, fragment)
+            commit()
+        }
 }

@@ -31,4 +31,12 @@
         android:textSize="25dp"
         android:textColor="@android:color/black"/>
 
+    <Button
+        android:id="@+id/manual_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="500dp"
+        android:text="Manual Input" />
+
 </RelativeLayout>
