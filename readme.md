@@ -85,10 +85,19 @@ CSCI 536: Tech for Social Good.
   - [ ] Reorganizing
 
 #### Division of labor:
-- [ ] Olivia
-- [ ] Sam
+- [X] Olivia
+  - [X] Icon design and implementation
+  - [X] Logo design and implementation
+- [X] Sam
+  - [X] ListView for fridge page
+  - [X] Populate ListView from database
+  - [X] Git Management
 - [ ] Noah
+  - [ ] Scanned Product Page
+    - [ ] Display info on scanned item
+    - [ ] Uses upcdatabase.com API
 - [ ] Luther
+  - [ ] Manual entry of products
 
 ### 4. Dec 9th -- Polishing
 - [ ] Icons
