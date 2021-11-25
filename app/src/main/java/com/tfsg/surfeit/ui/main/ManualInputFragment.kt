@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
+import com.tfsg.surfeit.DatabaseManager
 import com.tfsg.surfeit.Food
 import com.tfsg.surfeit.R
 import java.util.*
@@ -42,24 +43,28 @@ class ManualInputFragment : Fragment() {
             // If text fields are filled, save product into database and state that it was a success
             if (validate(name, amount, category)) {
                 // Selected purchase date
+                var pYear = purchase.year
                 var pMonth = purchase.month + 1 // Since January is 0
                 var pDay = purchase.dayOfMonth
-                var pYear = purchase.year
+                val pDate = convertDate(pYear, pMonth, pDay)
 
                 // Selected expiration date
+                var eYear = expiration.year
                 var eMonth = expiration.month + 1 // Since January is 0
                 var eDay = expiration.dayOfMonth
-                var eYear = expiration.year
+                val eDate = convertDate(eYear, eMonth, eDay)
 
-                // TODO Add product to database/list (date is String in database)
-                //val food = Food(name.text.toString(), )
+                // Add product to database
+                val db = DatabaseManager(requireActivity())
+                val product = Food(name.text.toString(), pDate, eDate, amount.text.toString().toInt())
+                db.insert(product)
 
                 displayMessage.setText("Product: " + name.text.toString() + " successfully saved!\n" +
-                        "Expiration Date: " + eMonth + "/" + eDay + "/" + eYear
+                        "Expiration Date: " + eDate
                 )
             }
 
-            // TODO Implement back button
+            // TODO Implement back button?
         }
     }
 
@@ -86,5 +91,29 @@ class ManualInputFragment : Fragment() {
         }
 
         return true
+    }
+
+    /**
+     * Convert date into one line of string.
+     */
+    private fun convertDate(year: Int, month: Int, day: Int): String {
+        // yyyy-
+        var date = "$year-"
+
+        // yyyy-mm-
+        // If month is 1 digit, concatenate a 0 before it
+        if (month.toString().length == 1) {
+            date = date.plus("0")
+        }
+        date = "$date$month-"
+
+        // yyyy-mm-dd
+        // If day is 1 digit, concatenate a 0 before it
+        if (day.toString().length == 1) {
+            date = date.plus("0")
+        }
+        date = "$date$day"
+
+        return date
     }
 }
