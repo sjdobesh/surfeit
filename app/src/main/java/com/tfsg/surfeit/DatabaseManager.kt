@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 
 // database manager to act as interface to an sqlite database
 // To access this in fragments use 'DatabaseManager db = DatabaseManager(this)'
-abstract class DatabaseManager(context: Context?) :
+class DatabaseManager(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         // create the main table of entries
