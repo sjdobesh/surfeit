@@ -29,9 +29,9 @@ class ManualInputFragment : Fragment() {
      * Main view to take in user input for the product.
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         val name = view.findViewById<EditText>(R.id.product_name)
+        val amount = view.findViewById<EditText>(R.id.product_amount)
+        val purchase = view.findViewById<DatePicker>(R.id.purchase_date)
         val expiration = view.findViewById<DatePicker>(R.id.expiration_date)
         val category = view.findViewById<EditText>(R.id.category_type)
         val submitButton = view.findViewById<Button>(R.id.button_submit)
@@ -40,17 +40,22 @@ class ManualInputFragment : Fragment() {
         // Once the submit button is clicked, continue
         submitButton.setOnClickListener {
             // If text fields are filled, save product into database and state that it was a success
-            if (validate(name, category)) {
-                // Selected date
-                var month = expiration.month + 1 // Since January is 0
-                var day = expiration.dayOfMonth
-                var year = expiration.year
+            if (validate(name, amount, category)) {
+                // Selected purchase date
+                var pMonth = purchase.month + 1 // Since January is 0
+                var pDay = purchase.dayOfMonth
+                var pYear = purchase.year
 
-                // TODO Add product to database/list
+                // Selected expiration date
+                var eMonth = expiration.month + 1 // Since January is 0
+                var eDay = expiration.dayOfMonth
+                var eYear = expiration.year
+
+                // TODO Add product to database/list (date is String in database)
                 //val food = Food(name.text.toString(), )
 
                 displayMessage.setText("Product: " + name.text.toString() + " successfully saved!\n" +
-                        "Expiration Date: " + month + "/" + day + "/" + year
+                        "Expiration Date: " + eMonth + "/" + eDay + "/" + eYear
                 )
             }
 
@@ -61,9 +66,15 @@ class ManualInputFragment : Fragment() {
     /**
      * Function to validate the product name and category are not empty.
      */
-    private fun validate(name: EditText, category: EditText): Boolean {
+    private fun validate(name: EditText, amount: EditText, category: EditText): Boolean {
         if (name.text.toString().isEmpty()) {
             name.error = "Name should not be blank."
+
+            return false
+        }
+
+        if (amount.text.toString().isEmpty()) {
+            amount.error = "Amount should not be blank."
 
             return false
         }

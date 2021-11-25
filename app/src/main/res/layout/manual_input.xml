@@ -12,13 +12,13 @@
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp">
+        android:layout_marginTop="5dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Manual Input" />
+            android:text="Product" />
 
         <EditText
             android:id="@+id/product_name"
@@ -27,6 +27,27 @@
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/product_amount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Amount"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Purchase Date:" />
+
+        <DatePicker
+            android:id="@+id/purchase_date"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
 
         <TextView
             android:id="@+id/textView"
@@ -37,7 +58,7 @@
         <DatePicker
             android:id="@+id/expiration_date"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:datePickerMode="spinner"
             android:calendarViewShown="false"/>
 
