@@ -75,9 +75,9 @@ CSCI 536: Tech for Social Good.
         - [X] Displays decoded barcode
 
 ### 3. Nov 23rd -- Scanning
-- [ ] Camera scanning implemented
-- [ ] Manual entry on failed scans available
-- [ ] User database management should be fully functional
+- [X] Camera scanning implemented
+- [X] Manual entry on failed scans available
+- [X] User database management should be fully functional
   - [ ] Categories
     - [ ] Basic default categories for common items
     - [ ] Leftovers
@@ -85,10 +85,20 @@ CSCI 536: Tech for Social Good.
   - [ ] Reorganizing
 
 #### Division of labor:
-- [ ] Olivia
-- [ ] Sam
+- [X] Olivia
+  - [X] Icon design and implementation
+  - [X] Logo design and implementation
+- [X] Sam
+  - [X] ListView for fridge page
+  - [X] Populate ListView from database
+  - [X] Git Management
 - [ ] Noah
-- [ ] Luther
+  - [ ] Scanned Product Page
+    - [ ] Display info on scanned item
+    - [ ] Uses upcdatabase.com API
+- [X] Luther
+  - [X] Manual entry of products
+    - [X] Product is written/saved to database
 
 ### 4. Dec 9th -- Polishing
 - [ ] Icons

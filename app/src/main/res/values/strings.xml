@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Surfeit</string>
+    <string name="dairy">Dairy</string>
+    <string name="use_soon">Use Soon</string>
+    <string name="fresh">Fresh</string>
+    <string name="meat">Meat</string>
+    <string name="Produce">Produce</string>
+    <string name="Staples">Staples</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="fridge_name">My Kitchen</string>
+    <string name="money_saved">Money Saved</string>
+    <string name="money_save_val">$0</string>
+    <string name="leftovers">Leftovers</string>
 </resources>
