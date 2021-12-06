@@ -17,8 +17,7 @@ class DatabaseManager(context: Context?) :
         sqlTable += "${PURCHASE_DATE}purchase date, "
         sqlTable += "${EXPIRATION_DATE}expiration date, "
         sqlTable += "${COUNT}count )"
-        db.execSQL(sqlTable)
-    }
+        db.execSQL(sqlTable)    }
 
     // you just have to override this, we don't need to use it
     override fun onUpgrade(db: SQLiteDatabase, oldV: Int, newV: Int) {}
@@ -51,6 +50,49 @@ class DatabaseManager(context: Context?) :
         db.close( )
         return entries
     }
+
+    fun returnfoodtitles(): ArrayList<String>  {
+        val sqlQuery = "select * from $TABLE_FRIDGE"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery( sqlQuery, null )
+
+        val food = ArrayList<String>( )
+        while(cursor.moveToNext()) {
+            val currentItem = Food(cursor.getString( 1 ), cursor.getString( 2 ),cursor.getString( 3 ), cursor.getInt(4))
+            food.add(currentItem.title)
+        }
+        db.close( )
+        return food
+    }
+    fun returnfoodcount(): ArrayList<String>  {
+        val sqlQuery = "select * from $TABLE_FRIDGE"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery( sqlQuery, null )
+
+        val count = ArrayList<String>( )
+        while(cursor.moveToNext()) {
+            val currentItem = Food(cursor.getString( 1 ), cursor.getString( 2 ),cursor.getString( 3 ), cursor.getInt(4))
+            val entry = " "+currentItem.count.toString()
+            count.add(entry)
+        }
+        db.close( )
+        return count
+    }
+
+    fun returnfooddate(): ArrayList<String>  {
+        val sqlQuery = "select * from $TABLE_FRIDGE"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery( sqlQuery, null )
+
+        val dates = ArrayList<String>( )
+        while(cursor.moveToNext()) {
+            val currentItem = Food(cursor.getString( 1 ), cursor.getString( 2 ),cursor.getString( 3 ), cursor.getInt(4))
+            dates.add(currentItem.expirationDate)
+        }
+        db.close( )
+        return dates
+    }
+
 
     companion object {
         // database details
