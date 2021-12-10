@@ -35,6 +35,30 @@ class DatabaseManager(context: Context?) :
         db.close()
     }
 
+    // assumes the item exists in the database, therefore, removes item from database
+    fun remove(entry: String) {
+        val db = this.writableDatabase
+        val sqlRemove = "DELETE FROM $TABLE_FRIDGE WHERE titletitle = '" + entry + "' COLLATE NOCASE"
+
+        db.execSQL(sqlRemove)
+    }
+
+    // checks if item exists in teh database: true that it exists, else, false
+    fun exist(entry: String): Boolean {
+        var exist = false
+        val sqlExist = "SELECT * FROM $TABLE_FRIDGE WHERE titletitle = '" + entry + "' COLLATE NOCASE"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(sqlExist, null)
+
+        if (cursor.getCount() > 0) {
+            exist = true
+        }
+
+        cursor.close()
+        db.close()
+        return exist
+    }
+
     @SuppressLint("Recycle")
     fun selectAll(): ArrayList<Food>  {
         val sqlQuery = "select * from $TABLE_FRIDGE"
