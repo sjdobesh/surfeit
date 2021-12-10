@@ -43,9 +43,16 @@ class CameraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val scannerView = view.findViewById<CodeScannerView>(R.id.scanner_view)
         val manualButton = view.findViewById<Button>(R.id.manual_button)
+        val submitButton = view.findViewById<Button>(R.id.submit_button)
         val activity = requireActivity()
         var lastBarcode = ""
         var scanCount = 0
+
+        var upc = ""
+        var title = ""
+        var desc = ""
+        var cat = ""
+        var amnt = 0
 
         codeScanner = CodeScanner(activity, scannerView)
 
@@ -64,7 +71,7 @@ class CameraFragment : Fragment() {
             codeScanner.decodeCallback = DecodeCallback {
                 activity.runOnUiThread {
                     val scannedItem = view.findViewById<TextView>(R.id.tv_textView)
-
+                    upc = it.text
                     scannedItem.text = it.text
                     if(it.text != lastBarcode) {
                         scanCount++
@@ -74,32 +81,70 @@ class CameraFragment : Fragment() {
                         // TODO Save the decoded barcode with it.text
                         val scannerView = view.findViewById<TextView>(R.id.tv_scannedName)
                         val scannerDesc = view.findViewById<TextView>(R.id.tv_scannedDesc)
+                        val scannerCat = view.findViewById<TextView>(R.id.tv_scannedCat)
 
                         //tutorial from https://developer.android.com/training/volley/simple
 
                         // Instantiate the RequestQueue.
                         val queue = Volley.newRequestQueue(getActivity()?.getApplicationContext())
-                        val url = "https://api.upcitemdb.com/prod/trial/lookup?upc=" + it.text
+                        var url = "https://api.upcitemdb.com/prod/trial/lookup?upc=" + it.text
 
                         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
                             Response.Listener { response ->
-//                                scannerView.text = response.getString("code")
                                 val jsonArray = response.getJSONArray("items")
                                 if (jsonArray.length() > 0) {
-                                    val item = jsonArray.getJSONObject(0);
-                                    val title = item.getString("title")
-                                    val desc = item.getString("description")
-                                    var titleLength = 50;
-                                    if (title.length < titleLength) titleLength = title.length;
-                                    scannerView.text = "%s".format(title.substring(0, titleLength))
-                                    var descLength = 85;
-                                    if (desc.length < descLength) descLength = desc.length;
-                                    scannerDesc.text = "%s".format(desc.substring(0, descLength))
+                                    var item = jsonArray.getJSONObject(0);
+                                    title = item.getString("title")
+                                    desc = item.getString("description")
+                                    cat = item.getString("category")
+                                    amnt = 1
+                                    var titleLength = 50
+                                    var elipses = "..."
+                                    if (title.length < titleLength){
+                                        titleLength = title.length
+                                        elipses = ""
+                                    }
+                                    if (title.length > 0) scannerView.text = "Product: %s".format(title.substring(0, titleLength)) + elipses
+                                    else scannerView.text = "No name found in our records... sorry"
+
+                                    elipses = "..."
+                                    var descLength = 150
+                                    if (desc.length < descLength){
+                                        descLength = desc.length
+                                        elipses = ""
+                                    }
+                                    if (desc.length > 0) scannerDesc.text = "Description: %s".format(desc.substring(0, descLength)) + elipses
+                                    else scannerDesc.text = "No description found in our records... sorry"
+
+                                    elipses = "..."
+                                    var catLength = 100
+                                    if (cat.length < catLength){
+                                        catLength = cat.length
+                                        elipses = ""
+                                    }
+                                    if (cat.length > 0) scannerCat.text = "Category: %s".format(cat.substring(0, catLength)) + elipses
+                                    else scannerCat.text = "No categories found in our records... sorry"
+                                }
+                                else{
+                                    scannerView.text = "Item not found"
+                                    scannerDesc.text = "Sorry, that item does not exist in our database. Please click the Manual Input button to enter it manually."
+                                    scannerCat.text = ""
+                                    upc = ""
+                                    title = ""
+                                    desc = ""
+                                    cat = ""
+                                    amnt = 0
                                 }
                             },
                             Response.ErrorListener { error ->
                                 scannerView.text = "Invalid Scan"
-                                scannerDesc.text = ""
+                                scannerDesc.text = "Try scanning the code again in a brighter area or from closer up."
+                                scannerCat.text = ""
+                                upc = ""
+                                title = ""
+                                desc = ""
+                                cat = ""
+                                amnt = 0
                             }
                         )
                         // Add the request to the RequestQueue.
@@ -112,6 +157,18 @@ class CameraFragment : Fragment() {
 
         scannerView.setOnClickListener {
             codeScanner.startPreview()
+        }
+
+        submitButton.setOnClickListener {
+            val args = Bundle()
+            args.putString("productUPC", upc)
+            args.putString("productName", title)
+            args.putString("productDesc", desc)
+            args.putInt("productAmnt", amnt)
+            args.putString("productCat", cat)
+            val fragment = ManualInputFragment()
+            fragment.arguments = args
+            setFrag(fragment)
         }
 
         manualButton.setOnClickListener {

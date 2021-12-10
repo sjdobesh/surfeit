@@ -1,6 +1,7 @@
 package com.tfsg.surfeit.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +38,27 @@ class ManualInputFragment : Fragment() {
         val category = view.findViewById<EditText>(R.id.category_type)
         val submitButton = view.findViewById<Button>(R.id.button_submit)
         val displayMessage = view.findViewById<TextView>(R.id.message_display)
+
+        //populate form values with scanned data
+        val productUPC = arguments?.getString("productUPC")
+        val productName = arguments?.getString("productName")?.lowercase()?.replaceFirstChar(Char::titlecase)
+        val productDesc = arguments?.getString("productDesc")
+        val productAmnt = arguments?.getInt("productAmnt")
+        val productCat = arguments?.getString("productCat")
+        val productCatList = productCat?.split(" > ")
+        val productCatMain = productCatList?.last()
+
+        productName?.let{
+            name.append("$productName")
+        }
+
+        productAmnt?.let{
+            if (productAmnt > 0) amount.append("$productAmnt")
+        }
+
+        productCatMain?.let{
+            category.append("$productCatMain")
+        }
 
         // Once the submit button is clicked, continue
         submitButton.setOnClickListener {
