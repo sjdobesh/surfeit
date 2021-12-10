@@ -101,14 +101,19 @@ CSCI 536: Tech for Social Good.
     - [X] Product is written/saved to database
 
 ### 4. Dec 9th -- Polishing
-- [ ] Icons
-- [ ] Color Scheme
+- [X] Icons
+- [X] Color Scheme
 - [ ] Animations
-- [ ] Manual Testing
-- [ ] Address any problems from earlier milestones
+- [X] Manual Testing
+- [X] Address any problems from earlier milestones
 
 #### Division of labor:
-- [ ] Olivia
-- [ ] Sam
-- [ ] Noah
-- [ ] Luther
+- [X] Olivia
+  - [X] Updated display of database in fridge tab
+- [X] Sam
+  - [X] Git management/code review
+- [X] Noah
+  - [X] Display product info or reason for invalid scan
+  - [X] Transfer scanned item data to populate the manual input page
+- [X] Luther
+  - [X] Remove product from fridge and update contents/view
