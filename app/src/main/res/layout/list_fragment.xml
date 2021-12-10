@@ -21,10 +21,36 @@
         app:layout_constraintVertical_bias="0.053" />
 
     <ListView
-      android:id="@+id/list_view"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints">
-   </ListView>
+        tools:ignore="MissingConstraints"></ListView>
+
+    <ListView
+        android:id="@+id/list_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="125dip"
+        android:divider="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints"></ListView>
+
+    <ListView
+        android:id="@+id/list_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="250dip"
+        android:divider="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints"></ListView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
